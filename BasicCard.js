@@ -9,19 +9,23 @@ function BasicCard(question,answer){
 				message:this.question
 			}
 			]).then(function(inquirerResponse){
-				if (inquirerResponse.question === this.answer) {
+				if (inquirerResponse.question === answer) {
 					console.log("You answered the question correctly!")
+					console.log(answer)
 				} else {
-					console.log("Sorry, the correct answer was" + this.answer)
+					console.log("Sorry, the correct answer was " + answer)
+					console.log(answer)
 				}
 			})
-		}
+			var answer = this.answer
+		};
 		this.printCard();
+		
 
 };
 
-var quest1 = new BasicCard("Who was the 16th president of the United States?","Abraham Lincoln");
-var quest2 = new BasicCard("Who was the 3rd president of the United States?","Thomas Jefferson");
+var quest1 = new BasicCard("Who was the 16th president of the United States?", "Abraham Lincoln");
+//var quest2 = new BasicCard("Who was the 3rd president of the United States?","Thomas Jefferson");
 
 
 //Example of adding new flashcard to existing constructor
